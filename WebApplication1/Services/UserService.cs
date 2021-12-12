@@ -15,16 +15,16 @@ namespace WepApIBasicAuth.Services
         public  bool ValidateCredentials(string username, string password)
         {
 
-            // return (username.Equals("ws") && (password.Equals("123")));
-            var user = _context.User.Single(e => e.nname.Equals(username) && e.pass.Equals( password));
+            return (username.Equals("ws") && (password.Equals("123")));
+            //var user = _context.User.Single(e => e.nname.Equals(username) && e.pass.Equals( password));
 
-            if (user != null)
-            {
-                return true;
+            //if (user != null)
+            //{
+            //    return true;
 
 
-            }
-            else return false;
+            //}
+            //else return false;
         }
 
     }
