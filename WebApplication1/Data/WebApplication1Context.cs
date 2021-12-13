@@ -15,5 +15,7 @@ namespace WebApplication1.Data
         }
 
         public DbSet<WebApplication1.Models.User> User { get; set; }
+
+        public DbSet<WebApplication1.Models.Worker> Worker { get; set; }
     }
 }

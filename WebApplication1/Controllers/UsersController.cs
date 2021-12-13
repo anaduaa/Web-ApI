@@ -11,9 +11,9 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly WebApplication1Context _context;

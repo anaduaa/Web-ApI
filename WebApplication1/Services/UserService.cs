@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Data;
+using WebApplication1.Models;
 using WepApIBasicAuth.Iservice;
 
 
@@ -14,17 +15,15 @@ namespace WepApIBasicAuth.Services
         private readonly WebApplication1Context _context;
         public  bool ValidateCredentials(string username, string password)
         {
-
-            return (username.Equals("ws") && (password.Equals("123")));
-            //var user = _context.User.Single(e => e.nname.Equals(username) && e.pass.Equals( password));
-
-            //if (user != null)
-            //{
-            //    return true;
-
-
-            //}
-            //else return false;
+            User user = new User();
+            Worker worker = new Worker();
+            bool f = user.GetUsers(password, username);
+            bool w= worker.GetWorkers(password, username);
+            bool u = user.GetUsers(password, username);
+            if (f==true)
+          return  u;
+            else
+                return w;
         }
 
     }
